@@ -10,7 +10,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = [
-    'https://*.railway.app',
+    'https://*.onrender.com',
 ]
 
 INSTALLED_APPS = [
@@ -67,10 +67,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Fallback sur Supabase si DATABASE_URL absent
 DATABASES = {
     'default': dj_database_url.config(
-        default=config(
-            'DATABASE_URL',
-            default='postgresql://postgres.hzrwwvwcnrzrkzuqlcfa:lafriquecimagnifique@aws-0-eu-west-1.pooler.supabase.com:6543/postgres?sslmode=require'
-        ),
+        default='postgresql://postgres.hzrwwvwcnrzrkzuqlcfa:lafriquecimagnifique@aws-0-eu-west-1.pooler.supabase.com:6543/postgres?sslmode=require',
         conn_max_age=600,
         ssl_require=True,
     )
