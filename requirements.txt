@@ -15,3 +15,4 @@ sqlparse==0.5.5
 python-decouple
 dj-database-url
 whitenoise
+gunicorn
